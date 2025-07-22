@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:salonova/app/bindings/app_bindings.dart';
+import 'package:salonova/app/controllers/home_view_controller.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -6,22 +9,28 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home View')),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('Welcome to the Home View!'),
-            ElevatedButton(
-              onPressed: () {
-                // Action when button is pressed
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Button Pressed!')),
-                );
-              },
-              child: const Text('Press Me'),
-            ),
-          ],
+        child: GetBuilder<HomeViewController>(
+          builder: (controller) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  homeViewController.counter.value.toString(),
+                  style: TextStyle(fontSize: 24),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: homeViewController.incrementCounter,
+                  child: const Text('Increment'),
+                ),
+                ElevatedButton(
+                  onPressed: homeViewController.decrementCounter,
+                  child: const Text('Decrement'),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
