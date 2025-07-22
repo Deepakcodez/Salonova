@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:salonova/app/bindings/app_bindings.dart';
-import 'package:salonova/models/home/home_view.dart';
+import 'package:salonova/views/home/home_view.dart';
 import 'package:salonova/app/routes/app_pages.dart';
 
 class AppPages {
