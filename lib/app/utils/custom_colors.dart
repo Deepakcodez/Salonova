@@ -8,4 +8,6 @@ class CustomColors {
   static const Color scafoldBgColor = Color(0xFFF4F4F4);
 
   static const Color btnColor = Color(0xFFB7ACA2);
+  static const Color mainColor = Color(0xFF3D5250);
+
 }
