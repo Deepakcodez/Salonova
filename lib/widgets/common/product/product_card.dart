@@ -28,8 +28,7 @@ class _ProductCardState extends State<ProductCard> {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: Card(
-        elevation: 4,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        elevation: 0,
         margin: const EdgeInsets.symmetric(horizontal: 4),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

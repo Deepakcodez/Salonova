@@ -16,22 +16,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) => ScreenUtilInit(
-        designSize: const Size(375, 812),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, child) => GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      getPages: AppPages.pages,
-      initialBinding: AppBindings(),
-      debugShowCheckedModeBanner: false,
-      initialRoute: Routes.initial,
-      home: child,
-    ),
+    designSize: const Size(375, 812),
+    minTextAdapt: true,
+    splitScreenMode: true,
+    builder:
+        (context, child) => GetMaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          ),
+          getPages: AppPages.pages,
+          initialBinding: AppBindings(),
+          debugShowCheckedModeBanner: false,
+          initialRoute: Routes.initial,
+          home: child,
+        ),
     child: const HomeView(),
   );
-  
-  
 }
